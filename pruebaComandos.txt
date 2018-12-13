@@ -1,0 +1,16 @@
+Para poder probar la funcionalidad, usa Postman
+
+POST
+127.0.0.1/genero
+
+GET
+127.0.0.1/genero
+Pasar el id por las opciones que dispone
+
+PUT
+127.0.0.1/genero/[id]
+El id pasa por la URL, pasar el nombre a modificar por las opciones que dispone
+
+DELETE
+127.0.0.1/genero/[id]
+El id pasa por la URL
