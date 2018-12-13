@@ -12,15 +12,18 @@ const app = express();
 app.use(bodyParser.urlencoded({extended: false}));
 app.use(bodyParser.json());
 app.use('/', indexRoutes);
+
+//INICIALIZACIÓN DE TODAS LAS RUTAS
 app.use('/genero', generoRoutes);
-//SE CREA LA CONEXIÓN CON EL SERVIDOR. ES EL CONTROLADOR
-app.get('/', (req, res) => {
-  res.status(200).send({msg: 'Hola mundo'})
-});
 
 //SE CREA LA CONEXIÓN CON EL SERVIDOR. ES EL CONTROLADOR
-app.post('/', (req, res) => {
-  return res.status(200).send(req.body); // {}
+app.get('/', (req, res) => {
+  res.status(200).send({msg: 'Servicio iniciado'})
+});
+
+//MANDA MENSAJE DE ERROR EN CASO DE NO ENCONTRAR LA RUTA
+app.use((req, res, next) => {
+  return res.status(404).send({msg: 'Ruta no encontrada.'});
 });
 
 //INICIAR LA APLICACIÓN
