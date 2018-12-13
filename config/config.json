@@ -1,0 +1,9 @@
+{
+  "development": {
+    "username": "BootCamp",
+    "password": "BootCamp",
+    "database": "Equipo4",
+    "host": "sandbox.salesup.com.mx",
+    "dialect": "mssql"
+  }
+}
