@@ -9,7 +9,7 @@ module.exports = {
     }
 
     const directores = await models.Director.findAll({
-      include: {models.Pelicula},
+      include: [models.Pelicula],
       where: where
     });
     return res.status(200).send(directores);
@@ -25,7 +25,7 @@ module.exports = {
   },
   put: async (req, res) => {
     try{
-      let director = await.models.Director.findById(req.params.idDirector);
+      let director = await models.Director.findById(req.params.idDirector);
 
       if(!director){
         return res.status(404).send({msg: 'Registro no encontrado'});
@@ -39,7 +39,7 @@ module.exports = {
   },
   delete: async (req, res) => {
     try{
-      let director = await.models.Director.findById(req.params.idDirector);
+      let director = await models.Director.findById(req.params.idDirector);
 
       if(!director){
         return res.status(404).send({msg: 'Registro no encontrado'});

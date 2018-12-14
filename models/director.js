@@ -1,15 +1,15 @@
 'use strict';
 
-module.exports = function(sequelize, DataTypes){
+module.exports = function(sequelize, DataType) {
   const Director = sequelize.define('Director', {
     idDirector: {
-      type: DataTypes.INTEGER,
+      type: DataType.INTEGER,
       primaryKey: true,
       autoIncrement: true,
       field: 'ID_DIRECTOR'
     },
     nombre: {
-      type: DataTypes.STRING,
+      type: DataType.STRING,
       field: 'NOMBRE',
       allowNull: false
     }
@@ -19,7 +19,7 @@ module.exports = function(sequelize, DataTypes){
   });
 
   Director.associate = function(models) {
-    //Director.hasMany(models.Pelicula, {foreignKey: 'idPelicula'});
+    Director.hasMany(models.Pelicula, {foreignKey: 'idPelicula'});
   };
 
   return Director;

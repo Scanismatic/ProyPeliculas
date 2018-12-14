@@ -4,6 +4,8 @@ const express = require('express');
 const bodyParser = require('body-parser');
 const indexRoutes = require('./routes'); //Como se llama index.js el nombre del archivo no se debe especificar
 const generoRoutes = require('./routes/genero');
+const directorRoutes = require('./routes/director');
+const peliculaRoutes = require('./routes/director');
 
 //SE CREA  LA APLICACIÓN
 const app = express();
@@ -15,6 +17,8 @@ app.use('/', indexRoutes);
 
 //INICIALIZACIÓN DE TODAS LAS RUTAS
 app.use('/genero', generoRoutes);
+app.use('/director', directorRoutes);
+app.use('/pelicula', peliculaRoutes);
 
 //SE CREA LA CONEXIÓN CON EL SERVIDOR. ES EL CONTROLADOR
 app.get('/', (req, res) => {
