@@ -1,5 +1,6 @@
 //IMPORTACIÓN DE LIBRERIAS NECESARIAS
 'use strict';
+const cors = require('cors');
 const express = require('express');
 const bodyParser = require('body-parser');
 const indexRoutes = require('./routes'); //Como se llama index.js el nombre del archivo no se debe especificar
@@ -11,6 +12,7 @@ const peliculaRoutes = require('./routes/director');
 const app = express();
 
 //DECODIFICA LO OBTENIDO EN UN FORMATO ESPECIFICADO
+app.use(cors());
 app.use(bodyParser.urlencoded({extended: false}));
 app.use(bodyParser.json());
 app.use('/', indexRoutes);

@@ -17,5 +17,8 @@ module.exports = function(sequelize, DataType) {
     timestamps: false,
     tableName: 'GENEROS'
   });
+  Genero.associate = function(models) {
+    Genero.hasMany(models.Pelicula, {foreignKey: 'idGenero', sourceKey: 'idGenero'});
+  };
   return Genero;
 }

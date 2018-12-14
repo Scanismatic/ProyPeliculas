@@ -10,6 +10,7 @@
   "license": "MIT",
   "dependencies": {
     "body-parse": "^0.1.0",
+    "cors": "^2.8.5",
     "express": "^4.16.4",
     "sequelize": "^4.42.0",
     "tedious": "^3.0.1"
